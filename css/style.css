@@ -1,0 +1,109 @@
+body{
+    margin:0
+}
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.banner{
+    background-image: url("/img/banner.jpg");
+    width:100%;
+    height:30vh;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    position:relative;
+    padding: 35px;
+
+}
+.banner__bar{
+    margin:30px auto 0;
+    max-width: 100%;
+    padding:1rem;
+    background-color: #f2f9ff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.banner__bar .fa-bluetooth-b{
+    flex-grow:1;
+    color:#33698f;
+    
+}
+.banner__bar .fa-info-circle{
+    color:#93969b;
+    
+}
+.banner__bar >p{
+    margin:0;
+    flex-grow:10;
+}
+.banner__bar >i{
+    font-size:1.5em
+}
+
+
+nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: red;
+}
+
+.maincontent{
+    margin:35px
+}
+
+.maincontent__covid{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.maincontent__section{
+    padding-bottom:30px;
+    border-bottom:1px solid #ddd
+}
+.maincontent__covidbox{
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow:0px 1.5px 3px #888888;
+    margin:10px;
+    padding:15px;
+    width:50%;
+    text-align: center;
+    min-height:135px;
+    position: relative;
+    color: black !important;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.maincontent__covidbox h6{
+    margin:0;
+    font-weight: bolder;
+    font-size:1.25em;
+    
+    
+}
+.maincontent__covidboxicon{
+    width: 50px;
+    height: 50px;
+    margin:auto auto 0;
+    background-color: white;
+    border-radius: 50%;
+    font-size:1.5em
+
+}
+.maincontent__covidboxicon i{
+    padding:11px
+}
