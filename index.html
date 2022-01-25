@@ -11,7 +11,22 @@
     
     <body>
         <nav>
-            123
+            <a href="javascript:;" class="nav__tab">
+                <i class="fas fa-home"></i>
+                <p>首页</p>
+            </a>
+            <a href="javascript:;" class="nav__tab">
+                <i class="fas fa-history"></i>
+                <p>历史记录</p>
+            </a>
+            <a href="javascript:;" class="nav__tab">
+                <i class="fas fa-upload"></i>
+                <p>上载</p>
+            </a>
+            <a href="javascript:;" class="nav__tab">
+                <i class="fas fa-list"></i>
+                <p>更多</p>
+            </a>
         </nav>
         
         <div class="banner">
@@ -54,7 +69,40 @@
 
             <div class="maincontent__section">
                 <h4 class="maincontent__title">SafeEntry 登入</h4>
-                <div class="maincontent__covid">
+                <div class="maincontent__safeentry">
+                    <div class="safeentry__tabs">
+                        <a href="javascript:;" class="safeentry__tab safeentry__tab--active">
+                            <div class="safeentry__tabicon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <p>扫描QR码</p>
+                        </a>
+                        <a href="javascript:;" class="safeentry__tab">
+                            <div class="safeentry__tabicon">
+                                <img src="img/star.jpg" alt="">
+                            </div>
+                            <p>我的最爱</p>
+                        </a>
+                        <a href="javascript:;" class="safeentry__tab">
+                            <div class="safeentry__tabicon">
+                                <img src="img/people.jpg" alt="">
+                            </div>
+                            <p>组别</p>
+                        </a>
+                        
+                    </div>
+
+                    <div class="safeentry__infobox">
+                        <div class="safeentry__content">
+                            <p>最后登记入场的QR码</p>
+                            <h6>Giant Paya Lebar SQ</h6>
+                            <a href="javascript:;">查看通行证</a>
+                        </div>
+                        
+
+                        <button class="safeentry__btn" type="button">离场</button>
+                    </div>
+
 
                 </div>
                 
