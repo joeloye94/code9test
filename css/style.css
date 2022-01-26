@@ -9,10 +9,16 @@ body{
 a{
     text-decoration: none;
 }
+
+/*-------------
+
+banner
+
+----------------*/
 .banner{
     background-image: url("/img/banner.jpg");
     width:100%;
-    height:30vh;
+    
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
@@ -20,8 +26,9 @@ a{
     padding: 35px;
 
 }
+
 .banner__bar{
-    margin:30px auto 0;
+    /*margin:30px auto 0;*/
     max-width: 100%;
     padding:1rem;
     background-color: #f2f9ff;
@@ -46,10 +53,35 @@ a{
     flex-grow:10;
 }
 .banner__bar >i{
-    font-size:1.5em
+    font-size:1.5rem
 }
+@media(max-width: 576px){
+    .banner{
+        height:30vh;
+    }
+    .banner__bar{
+        margin:2rem auto 0;
+    }
+}
+@media(min-width: 577px) and (max-width:991px){
+    .banner{
+        height:50vh;
+    }
+    .banner__bar{
+        margin:8rem auto 0;
+    }
+}
+@media(min-width: 992px){
+    .banner{height:70vh;}
+    .banner__bar{
+        margin:14rem auto 0;
+    }
+}
+/*-------------
 
+nav
 
+----------------*/
 nav{
     position: fixed;
     bottom: 0;
@@ -57,11 +89,11 @@ nav{
     height: 100px;
     background-color: #fbf5f5;
     border-top:1px solid #c8c7c5;
-    
     display:flex;
     flex-direction:row;
     justify-content: space-between;
     padding:15px;
+    z-index:9999;
 }
 .nav__tab{
     color:#939393;
@@ -70,17 +102,28 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    transition: .1s ease-in;
+}
+.nav__tab:not(.nav__tab--active):hover{
+    color:#000;
 }
 .nav__tab--active{
     color:#fd666d
 }
+
 .nav__tab i{
     font-size:1.5rem
 }
 
+/*-------------
+
+main
+
+----------------*/
 .maincontent{
-    margin:35px
+    margin:35px;
+    min-height:1000px;
+    display:none
 }
 
 .maincontent__covid{
@@ -93,6 +136,47 @@ nav{
     padding-bottom:30px;
     border-bottom:1px solid #ddd
 }
+.maincontent__title{
+    position: relative;
+    font-size:1.15rem
+}
+.maincontent__title img{
+    vertical-align: middle;
+    margin-right:11px;
+}
+.maincontent__titleicon{
+    color: #000;
+    font-size:1.25rem;
+    position: absolute;
+    right: 0;
+}
+
+/*
+
+refresh animation
+
+*/
+.refreshing{
+    animation: refresh 1s linear infinite;
+}
+@keyframes refresh {
+    0% {
+        transform:rotateZ(0deg)
+    }
+    50% {
+        transform:rotateZ(180deg)
+    }
+    100% {
+        transform:rotateZ(360deg)
+    }
+}
+
+
+/*-------------
+
+top
+
+----------------*/
 .maincontent__covidbox{
     background-color: #f2f2f2;
     border-radius: 4px;
@@ -112,7 +196,7 @@ nav{
 .maincontent__covidbox h6{
     margin:0;
     font-weight: bolder;
-    font-size:1.25em;
+    font-size:1.25rem;
     
     
 }
@@ -122,7 +206,7 @@ nav{
     margin:auto auto 0;
     background-color: white;
     border-radius: 50%;
-    font-size:1.5em
+    font-size:1.5rem
 
 }
 .maincontent__covidboxicon i{
@@ -130,7 +214,11 @@ nav{
 }
 
 
+/*-------------
 
+bottom
+
+----------------*/
 .maincontent__safeentry{
     background-color: #fff;
     border:1px solid #ddd;
@@ -145,20 +233,68 @@ nav{
 
 }
 .safeentry__tab{
-    padding:24px
+    padding:24px;
+    min-width:33.33%;
+    text-align: center;
 }
+.safeentry__tab p{
+    margin:17px 0 0;
+    font-weight:bolder;
+    color:#000;
+}
+
 .safeentry__tab--active{
     background-color: #f4f9ff;
 }
-.safeentry__tabicon{
-    min-height:75px
+.safeentry__tab--active p{
+    color:#727679
 }
+
 .safeentry__infobox{
     display:flex;
     align-items: center;
     justify-content: space-between;
     padding:15px 18px
 }
+.safeentry__infobox--hidden{
+    display:none
+}
 .safeentry__btn{
     min-width: 155px;
+    padding:13px 0;
+    border:1px solid #398acc;
+    color:#398acc;
+    background:transparent;
+    border-radius:8px;
+    transition: .1s ease-in;
+    cursor:pointer;
+    
+}
+.safeentry__btn:hover,.safeentry__btn:focus{
+    border-color: #0c3c64;
+    color:#0c3c64;
+}
+.safeentry__btn:active{
+    background:#ddd
+}
+.safeentry__content{
+    margin-right:10px
+}
+.safeentry__content p{
+    color:#727679;
+    margin:0 0 17px
+}
+.safeentry__content h6{
+    color:#000;
+    font-size:1.25rem;
+    margin:0 0 17px;
+    text-transform: uppercase;
+}
+.safeentry__content a{
+    color:#2473ac;
+    text-decoration: underline;
+    margin:0 0 17px
+}
+.safeentry__content *:last-child{
+    margin:0
 }
